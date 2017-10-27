@@ -33,7 +33,10 @@ result_df = montecarlo_pi(100000)
 
 # plot the absolute value of the error by various iteration sizes
 import matplotlib.pyplot as plt
-iter_sizes = range(1, 1000000, 1000)
+iter_sizes = range(1000, 1000000, 1000)
 results2 = pd.DataFrame([(item, abs(montecarlo_pi(item)['percentage_error'][0])) for item in iter_sizes], columns=['num_iterations','abs_error'])
 
 results2.plot(x='num_iterations', y='abs_error')
+max1 = results2['abs_error'].max()+2
+axes = plt.gca()
+axes.set_ylim([0,max1])
