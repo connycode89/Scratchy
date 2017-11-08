@@ -19,6 +19,7 @@ def sieve(n):
     zip1 = zip(int_list,bool_init)
     num1 = zip1[0][0]
     while True:
+        print num1
         mult_list = filter(lambda y:y in int_list,[num2*num1 for num2 in int_list])
         zip1 = map(lambda x:comp(mult_list,x),zip1)
         filt1 = filter(lambda x:x[0]>num1 and x[1],zip1)
